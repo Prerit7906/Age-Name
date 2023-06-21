@@ -1,0 +1,31 @@
+.form-main{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(198, 229, 229);
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 0px;
+    padding: 5px;
+}
+.form-inputs{   
+    width: 70%;
+    display: block;
+    margin: 5px;
+}
+.submitbtn{
+    width: 20%;
+    margin: 5px;
+}
+@media (max-width:600px){
+    .form-main{
+        width:90%;
+        height: auto;
+    }
+    .submitbtn{
+        width: 70%;
+    }
+}
+

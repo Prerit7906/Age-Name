@@ -1,0 +1,18 @@
+.item-handler{
+    padding: 5px;
+    width: 40%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(198, 229, 229);
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 7px 0px;
+}
+@media (max-width:600px){
+    .item-handler{
+        width:90%;
+    }
+    
+}

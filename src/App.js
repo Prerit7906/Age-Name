@@ -1,24 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Additem from './components/AddItem/Additem';
+import Itemlist from './components/Itemlist/Itemlist';
+import { useState } from 'react';
+import ErrorMssg from './components/ErrorMssgs/ErrorMssg';
 function App() {
+  const [details,setDetails]=useState([{Name:'Prerit', Age:'19'},{Name:'Mani', Age:'17'}]);
+  const addDetailsHandler =myDetails=>{
+    setDetails(myDetails);
+  };
+  const [mssg,Setmssg]=useState('');
+  function mssgHandler(mssg) {
+    Setmssg(mssg);
+  }
+  let content=(
+    <p className='No-item'>No items found!!</p>
+    );
+    if(details.length>0){
+      content=(
+        <Itemlist detail={details}/>
+      );
+    }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Additem mssg={mssgHandler} details={details} onAddDetails={addDetailsHandler}/>
+    {content}
+    <ErrorMssg mssg={mssg}/>
+    </>
   );
 }
 
