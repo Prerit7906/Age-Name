@@ -11,22 +11,24 @@ function Additem(props) {
  }
  function submitHandler(event){
   event.preventDefault();
-  var mssg='';
-  if(name.trim()=='' || age.trim()=='') {
-    mssg="Insufficient Data";
-    props.mssg(mssg);
+  var dialog='';
+  if(name.trim().length===0 | age==='') {
+    // var mssg=;
+    dialog=document.getElementById('id1');
+    dialog.showModal();
+    props.mssg("Insufficient Data");
     return;
   }
   if(age<0) {
-    mssg="Negative value";
-    props.mssg(mssg);
+    // var mssg=;
+    dialog=document.getElementById('id1');
+    dialog.showModal();
+    props.mssg("Negative value");
     return;
 }
   const updatedDetails=[...props.details];
   updatedDetails.unshift({Name:name,Age:age});
   props.onAddDetails(updatedDetails);
-  setName('');
-  setAge('');
  }
   return (
     <div className='Additem'>

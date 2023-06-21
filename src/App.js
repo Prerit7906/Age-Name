@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Additem from './components/AddItem/Additem';
 import Itemlist from './components/Itemlist/Itemlist';

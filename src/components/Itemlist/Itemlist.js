@@ -3,7 +3,6 @@ import './Itemlist.css'
 import Item from '../Item/Item.js'
 
 export default function Itemlist(props) {
-  const text=props.name+' '+props.age;
   return (
     <ul className='item-handler'>
       {
